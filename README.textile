@@ -1,0 +1,13 @@
+h1. Wygwam Super Admin Source extension
+
+This EE2 extension forces Wygwam’s “Source” toolbar button to always show up for Super Admins.
+
+h3. Requirements
+
+* "ExpressionEngine":http://expressionengine.com 2.0.1 build 20100215 or later
+* "Wygwam":http://pixelandtonic.com 2.1 or later
+
+h3. Installation
+
+* Upload the wygwam_super_admin_source folder to system/expressionengine/third_party/
+* Enable Wygwam Super Admin Source in Add-Ons → Extensions
