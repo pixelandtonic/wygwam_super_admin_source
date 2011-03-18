@@ -78,18 +78,22 @@ class Wygwam_super_admin_source_ext {
 			$config = $this->EE->extensions->last_call;
 		}
 
-		// try and find an existing Source button
-		foreach ($config['toolbar'] as &$tbgroup)
+		// is this a super admin?
+		if ($this->EE->session->userdata('group_id') == 1)
 		{
-			if (array_search('Source', $tbgroup) !== FALSE)
+			// try and find an existing Source button
+			foreach ($config['toolbar'] as &$tbgroup)
 			{
-				// found it, so we're done here
-				return $config;
+				if (array_search('Source', $tbgroup) !== FALSE)
+				{
+					// found it, so we're done here
+					return $config;
+				}
 			}
-		}
 
-		// ok, add it to the beginning
-		array_unshift($config['toolbar'], array(array('Source')));
+			// ok, add it to the beginning
+			array_unshift($config['toolbar'], array(array('Source')));
+		}
 
 		return $config;
 	}
