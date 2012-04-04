@@ -84,6 +84,9 @@ class Wygwam_super_admin_source_ext {
 			// try and find an existing Source button
 			foreach ($config['toolbar'] as &$tbgroup)
 			{
+				if (! is_array($tbgroup))
+					continue;
+
 				if (array_search('Source', $tbgroup) !== FALSE)
 				{
 					// found it, so we're done here
